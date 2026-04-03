@@ -10,7 +10,7 @@ An unofficial, end-to-end PyTorch implementation of the Google Research ICLR 202
 * **Variance-Optimized Projection:** Expands the QJL projection dimension ($m = 4d$) to heavily suppress estimator variance before the Softmax bottleneck.
 * **FP16 Value Passthrough (The Outlier Fix):** Compresses the Key cache to 3-bit/4-bit while leaving the Value cache in native FP16. This prevents spherical quantization from permanently destroying the massive activation outliers necessary for coherent LLM generation.
 
-The KV cache is the bottleneck for serving LLMs at scale. TurboQuant at 3.5 bits gives 6x compression with zero quality loss:
+The KV cache is the bottleneck for serving LLMs at scale. TurboQuant gives 6x compression with zero quality loss:
 
 - **6x more concurrent users per GPU** — direct 6x reduction in cost per query
 - **6x longer context windows** in the same memory budget
